@@ -26,17 +26,20 @@ class Widget(DOMWidget):
 
     def __init__(self, molecular_system, selection='all', structure_indices='all', syntax='MolSysMT'):
 
-        .self.molecular_system = molecular_system
-        .self.selection = selection
-        .self.syntax = syntax
-        .self.structure_indices = structure_indices
+        self.molecular_system = molecular_system
+        self.selection = selection
+        self.syntax = syntax
+        self.atom_indices = None
+        self.structure_indices = structure_indices
 
-        from molsysmt import get
+        from molsysmt import get, select
 
-        coordinates = get(self.molecular_system, selection=self.selection,
-                structure_indices=self.structure_indices, syntax=self.syntax)
+        self.atom_indices = select(self.molecular_system, selection=self.selection,
+                syntax=self.syntax)
 
-        coordinates_value = puw.get_value(coordinates, standard=True)
-        coordinates_value = coordinates_value[0]
+        coordinates = get(self.molecular_system, selection=self.atom_indices,
+                structure_indices=self.structure_indices)
 
-        
+        n_atoms = len(self.atom_indices)
+
+
