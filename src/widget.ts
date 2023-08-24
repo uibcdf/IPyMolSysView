@@ -22,7 +22,7 @@ export class MolSysModel extends DOMWidgetModel {
       _view_name: MolSysModel.view_name,
       _view_module: MolSysModel.view_module,
       _view_module_version: MolSysModel.view_module_version,
-      value: 'Hello IPyMolSysView!',
+      _molsysmt_version: 'x.x.x',
     };
   }
 
@@ -43,11 +43,14 @@ export class MolSysView extends DOMWidgetView {
   render() {
     this.el.classList.add('custom-widget');
 
-    this.value_changed();
-    this.model.on('change:value', this.value_changed, this);
+    // before display
+
+    //this.molsysmt_version_changed();
+    //this.model.on('change:_molsysmt_version', this.molsysmt_version_changed, this);
+
   }
 
-  value_changed() {
-    this.el.textContent = this.model.get('value');
+  molsysmt_version_changed() {
+    this.el.textContent = this.model.get('_molsysmt_version');
   }
 }
