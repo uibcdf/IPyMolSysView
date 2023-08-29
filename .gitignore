@@ -153,3 +153,7 @@ ipymolsysview/nbextension/index.*
 
 # Packed lab extensions
 ipymolsysview/labextension
+
+# js directory
+js/dist/
+js/lib/

@@ -4,7 +4,6 @@
 # Copyright (c) Diego Prada.
 # Distributed under the terms of the Modified BSD License.
 
-from ._pyunitwizard import puw as pyunitwizard
 from .widget import Widget
 from ._version import __version__, version_info
 
