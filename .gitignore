@@ -157,3 +157,5 @@ ipymolsysview/labextension
 # js directory
 js/dist/
 js/lib/
+
+.yarn/*

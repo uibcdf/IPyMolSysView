@@ -1,7 +1,7 @@
 [build-system]
 requires = [
     "hatchling>=1.6.0",
-    "jupyterlab==3.*",
+    "jupyterlab==4.*",
 ]
 build-backend = "hatchling.build"
 
@@ -90,8 +90,7 @@ dependencies = [
 
 [tool.hatch.build.hooks.jupyter-builder.build-kwargs]
 path = "."
-build_cmd = "build:prod"
-npm = ["jlpm"]
+build_cmd = "build"
 
 [tool.tbump]
 field = [
